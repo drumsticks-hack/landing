@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#102d5a">
+<title>drumsticks[hack] — Real problems. Real teams. A record you can point to.</title>
+<meta name="description" content="A collaborative system for builders: real problems, teams assembled by skill, and a public record of what gets built.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap">
+<style>
+:root{--bg:#f2f7fd;--surface:#fff;--ink:#102d5a;--muted:#5a6f8c;--line:#d7e4f4;--field:#fbfdff;--blue:#2864df;--sky:#79c5f5;--navy:#102d5a;--ok:#17653b;--okbg:#e9f8ef;--bad:#9b2c2c;--badbg:#fdecec;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1a33;--surface:#10264a;--ink:#e6f0fc;--muted:#9fb4d1;--line:#24406c;--field:#0c1f3d;--ok:#8fe0b2;--okbg:#10331f;--bad:#ffb4b4;--badbg:#3a1616;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1a33;--surface:#10264a;--ink:#e6f0fc;--muted:#9fb4d1;--line:#24406c;--field:#0c1f3d;--ok:#8fe0b2;--okbg:#10331f;--bad:#ffb4b4;--badbg:#3a1616;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+.wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0}
+.logo{display:inline-flex;align-items:baseline;white-space:nowrap;font-weight:900;letter-spacing:-1.35px;font-size:1.7rem;color:var(--ink)}
+.logo .br{color:var(--blue);letter-spacing:-1.7px}
+.logo .h{color:#ff6b6b}.logo .a{color:#f5a623}.logo .c{color:#20a879}.logo .k{color:#8b68e8}
+.navlinks{display:flex;align-items:center;gap:26px;color:var(--muted);font-size:.94rem}
+.navlinks a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:13px 22px;cursor:pointer;font-weight:700;transition:transform .18s ease,background .18s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:#1e55c7}
+.btn-ghost{background:transparent;color:#e8f4ff;border:1px solid rgba(232,244,255,.4)}
+.hero{position:relative;overflow:hidden;border-radius:30px;background:var(--navy);color:#fff;padding:clamp(34px,6vw,76px);display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.hero:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:var(--blue);right:-60px;top:-70px;pointer-events:none}
+.hero>*{position:relative}
+h1{font-size:clamp(2.5rem,5.6vw,4.6rem);line-height:1;letter-spacing:-.055em;margin:0 0 22px;font-weight:900}
+.hero p{color:#d3e4fa;font-size:clamp(1.02rem,1.8vw,1.2rem);max-width:520px;margin:0 0 28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.entry{background:#fff;color:#102d5a;border-radius:22px;padding:22px;box-shadow:0 22px 60px rgba(0,0,0,.28);transform:rotate(1.2deg)}
+.entry-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:800;margin-bottom:6px}
+.chip{font-size:.74rem;font-weight:700;color:#2864df;background:#e8f1ff;border-radius:999px;padding:4px 10px;white-space:nowrap}
+.entry dl{margin:0}
+.entry dt{font-size:.8rem;font-weight:800;color:#2864df;margin-top:14px}
+.entry dd{margin:3px 0 0;font-size:.93rem;color:#405979}
+.roles{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px}
+.roles span{font-size:.8rem;font-weight:700;border-radius:8px;padding:4px 9px;background:#f0f5fc;color:#102d5a}
+section{padding:84px 0}
+.head{max-width:680px;margin-bottom:34px}
+h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.08;letter-spacing:-.045em;margin:0 0 14px;font-weight:900}
+.lead{color:var(--muted);font-size:1.08rem;margin:0}
+.band{background:var(--navy);color:#fff}
+.band .lead{color:#c8d9ef}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(154,199,245,.3)}
+.steps li{padding:24px 22px 4px 0}
+.steps li+li{padding-left:22px;border-left:1px solid rgba(154,199,245,.3)}
+.steps b{display:block;color:var(--sky);font-size:.85rem;margin-bottom:10px}
+.steps h3{margin:0 0 8px;font-size:1.12rem}
+.steps p{margin:0;color:#c8d9ef;font-size:.94rem}
+.note{margin:30px 0 0;color:#c8d9ef;max-width:680px}
+.record{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.record ul{margin:22px 0 0;padding-left:20px;color:var(--muted)}
+.record li{margin:9px 0}
+.slot{border:2px dashed var(--line);border-radius:24px;padding:34px;min-height:260px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.slot b{font-size:1.4rem;letter-spacing:-.03em}
+.slot span{color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:clamp(24px,4.5vw,52px);display:grid;grid-template-columns:.85fr 1.15fr;gap:44px}
+label{display:block;font-size:.86rem;font-weight:700;margin:0 0 7px}
+input,select,textarea{width:100%;border:1px solid var(--line);background:var(--field);color:var(--ink);border-radius:12px;padding:13px 14px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.field{margin-bottom:15px}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;color:var(--muted);font-size:.92rem}
+.check input{width:auto;margin-top:4px}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.small{font-size:.84rem;color:var(--muted)}
+#status{margin-top:16px;border-radius:12px;padding:12px 14px;font-size:.93rem;display:none}
+#status.ok{display:block;background:var(--okbg);color:var(--ok)}
+#status.bad{display:block;background:var(--badbg);color:var(--bad)}
+footer{padding:26px 0 42px;color:var(--muted);font-size:.9rem}
+.fi{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+.fi .logo{font-size:1.3rem}
+@media (max-width:860px){.hero,.record,.panel{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.steps li:nth-child(3){padding-left:0;border-left:0}.steps li{padding-bottom:22px}.entry{transform:none}}
+@media (max-width:540px){.wrap{width:min(100% - 28px,1120px)}.navlinks a:not(.btn){display:none}.nav{padding:16px 0}.logo{font-size:1.5rem}.hero{padding:30px 22px;border-radius:22px}.steps{grid-template-columns:1fr}.steps li,.steps li+li{padding:20px 0 4px;border-left:0}.row{grid-template-columns:1fr;gap:0}section{padding:62px 0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="wrap nav">
+  <a class="logo" href="#" aria-label="drumsticks hack home">drumsticks<span class="br">[<span class="h">h</span><span class="a">a</span><span class="c">c</span><span class="k">k</span>]</span></a>
+  <nav class="navlinks" aria-label="Main">
+    <a href="#how">How it works</a>
+    <a href="#record">The record</a>
+    <a class="btn btn-primary" href="#join">Join the waitlist</a>
+  </nav>
+</header>
+<main>
+<div class="wrap">
+  <section class="hero" aria-labelledby="t">
+    <div>
+      <h1 id="t">Real problems. Real teams. A record you can point to.</h1>
+      <p>drumsticks[hack] is a collaborative system for builders. A real problem goes in, a team assembled by skill builds it in a focused session, and everything is documented in a public record of what was made and who made it.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#join">Be part of the first event</a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
+      </div>
+    </div>
+    <aside class="entry" aria-label="Preview of a record entry">
+      <div class="entry-head">Record entry <span class="chip">Format preview</span></div>
+      <dl>
+        <dt>Problem</dt><dd>A real problem, stated plainly, with a definition of done.</dd>
+        <dt>Team</dt><dd><span class="roles"><span>Backend</span><span>Frontend</span><span>UI/UX</span><span>Product</span></span></dd>
+        <dt>Outcome</dt><dd>What shipped, and how it was checked against the definition of done.</dd>
+        <dt>Artifacts</dt><dd>Repository, demo, write-up and session recording.</dd>
+      </dl>
+    </aside>
+  </section>
+</div>
+
+<section id="hack">
+  <div class="wrap record">
+    <h2>What’s a hack?</h2>
+    <p class="lead">A hack is a focused session where a small team explores a real problem, tests possible solutions and builds something together, working to a clear definition of done. It can be technical, creative or practical. It ends with something made and a record of how it was made.</p>
+  </div>
+</section>
+
+<section class="band" id="how">
+  <div class="wrap">
+    <div class="head">
+      <h2>One loop, from problem to record.</h2>
+      <p class="lead">Collaboration breaks down on unclear scope, mismatched skills and open-ended commitments. The system fixes each one up front.</p>
+    </div>
+    <ol class="steps">
+      <li><b>1</b><h3>A real problem is posted</h3><p>A host brings a problem with a clear definition of done and the skills it needs.</p></li>
+      <li><b>2</b><h3>The team is formed by skill</h3><p>Applicants are screened against the roles the problem requires: backend, frontend, UI/UX, and whatever else it demands.</p></li>
+      <li><b>3</b><h3>The team builds in a session</h3><p>A time-boxed session against the definition of done. Scope is cut to fit the time, never the other way round.</p></li>
+      <li><b>4</b><h3>The work becomes a record</h3><p>The problem, decisions, collaborators and outcome are documented and published.</p></li>
+    </ol>
+    <p class="note">Teams that believe in a problem can take it further after the session, under an agreement written so that people who continue are not held back by people who don’t.</p>
+  </div>
+</section>
+
+<section id="record">
+  <div class="wrap record">
+    <div>
+      <h2>A track record you can point to.</h2>
+      <p class="lead">Every session produces a public entry. Over time the record becomes a body of real work, credited to the people who built it.</p>
+      <ul>
+        <li>Each entry ties the problem, the team and the outcome together.</li>
+        <li>Contributors are credited by role.</li>
+        <li>Sessions are documented with write-ups and recordings.</li>
+      </ul>
+    </div>
+    <div class="slot" role="img" aria-label="Empty slot for the first record entry">
+      <b>Entry 001</b>
+      <span>Open. The first event hasn’t happened yet, and this is where it will live. The founding team is formed from the waitlist.</span>
+    </div>
+  </div>
+</section>
+
+<section id="join" style="padding-top:0">
+  <div class="wrap">
+    <div class="panel">
+      <div>
+        <h2>Be part of the first event.</h2>
+        <p class="lead">Join the waitlist and tell us what you build. Event details are still being set, and we’ll reach out as soon as they are.</p>
+      </div>
+      <form id="waitlist" novalidate>
+        <div class="row">
+          <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="skill">Primary skill</label>
+            <select id="skill" name="skill" required>
+              <option value="">Choose one</option><option>Backend</option><option>Frontend</option><option>UI/UX design</option><option>Product</option><option>Data</option><option>DevOps / infrastructure</option><option>Other</option>
+            </select></div>
+          <div class="field"><label for="link">Portfolio or GitHub</label><input id="link" name="link" type="url" placeholder="https://" autocomplete="url"></div>
+        </div>
+        <div class="field"><label for="problem">A real problem you’d want to work on <span class="small">(optional)</span></label><textarea id="problem" name="problem" rows="3"></textarea></div>
+        <div class="field"><label class="check"><input type="checkbox" name="bring" value="yes"> <span>I have a problem to bring, or I’d like to host a session later.</span></label></div>
+        <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
+        <div class="foot"><button class="btn btn-primary" type="submit">Join the waitlist</button><span class="small">We only use this to organise the first event.</span></div>
+        <div id="status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="wrap">
+  <div class="fi">
+    <a class="logo" href="#" aria-label="drumsticks hack home">drumsticks<span class="br">[<span class="h">h</span><span class="a">a</span><span class="c">c</span><span class="k">k</span>]</span></a>
+    <span>Real problems. Real teams. A record you can point to.</span>
+    <span>© <span id="year"></span> drumsticks[hack]</span>
+  </div>
+</footer>
+<script>
+(function(){
+  // Set ONE of these. endpoint: a form service URL that accepts JSON POSTs. email: opens the visitor's email app with their details.
+  var CONFIG={endpoint:"",email:""};
+  var f=document.getElementById("waitlist"),s=document.getElementById("status"),b=f.querySelector("button");
+  document.getElementById("year").textContent=new Date().getFullYear();
+  function show(t,c){s.textContent=t;s.className=c}
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(!f.reportValidity())return;
+    var d=Object.fromEntries(new FormData(f).entries());
+    if(d.company)return;
+    delete d.company;d.bring=d.bring?"yes":"no";
+    if(CONFIG.endpoint){
+      b.disabled=true;b.textContent="Sending…";
+      fetch(CONFIG.endpoint,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(d)})
+        .then(function(r){if(!r.ok)throw 0;f.reset();show("You’re on the waitlist. We’ll email you when the first event details are set.","ok")})
+        .catch(function(){show("That didn’t send. Check your connection and try again.","bad")})
+        .then(function(){b.disabled=false;b.textContent="Join the waitlist"});
+    }else if(CONFIG.email){
+      var body=Object.keys(d).map(function(k){return k+": "+d[k]}).join("\n");
+      window.location.href="mailto:"+CONFIG.email+"?subject="+encodeURIComponent("Waitlist: first event")+"&body="+encodeURIComponent(body);
+      show("Your email app should open with your details. Send the message to complete your signup.","ok");
+    }else{
+      show("The waitlist isn’t connected yet, so nothing was saved.","bad");
+    }
+  });
+})();
+</script>
+</body>
+</html>
