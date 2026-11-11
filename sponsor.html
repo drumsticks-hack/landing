@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#102d5a" />
+    <title>Support drumsticks[hack] — venue, refreshments and merch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap"
+    />
+    <style>
+      :root {
+        --bg: #f2f7fd;
+        --surface: #fff;
+        --ink: #102d5a;
+        --muted: #5a6f8c;
+        --line: #d7e4f4;
+        --blue: #2864df;
+        --sky: #79c5f5;
+        --navy: #102d5a;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #0a1a33;
+          --surface: #10264a;
+          --ink: #e6f0fc;
+          --muted: #9fb4d1;
+          --line: #24406c;
+          color-scheme: dark;
+        }
+      }
+      :root[data-theme="dark"] {
+        --bg: #0a1a33;
+        --surface: #10264a;
+        --ink: #e6f0fc;
+        --muted: #9fb4d1;
+        --line: #24406c;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.55;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        width: min(1000px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 22px 0;
+      }
+      .logo {
+        display: inline-flex;
+        align-items: baseline;
+        white-space: nowrap;
+        font-weight: 900;
+        letter-spacing: -1.35px;
+        font-size: 1.7rem;
+      }
+      .logo .br {
+        color: var(--blue);
+        letter-spacing: -1.7px;
+      }
+      .logo .h {
+        color: #ff6b6b;
+      }
+      .logo .a {
+        color: #f5a623;
+      }
+      .logo .c {
+        color: #20a879;
+      }
+      .logo .k {
+        color: #8b68e8;
+      }
+      .navlink {
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+      .navlink:hover {
+        color: var(--blue);
+      }
+      .btn {
+        display: inline-flex;
+        border-radius: 999px;
+        padding: 13px 22px;
+        font-weight: 700;
+        transition:
+          transform 0.18s ease,
+          background 0.18s ease;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn:focus-visible,
+      a:focus-visible {
+        outline: 3px solid var(--sky);
+        outline-offset: 2px;
+      }
+      .btn-primary {
+        background: var(--blue);
+        color: #fff;
+      }
+      .btn-primary:hover {
+        background: #1e55c7;
+      }
+      .btn-ghost {
+        color: #e8f4ff;
+        border: 1px solid rgba(232, 244, 255, 0.4);
+      }
+      .hero {
+        position: relative;
+        overflow: hidden;
+        border-radius: 30px;
+        background: var(--navy);
+        color: #fff;
+        padding: clamp(34px, 6vw, 70px);
+      }
+      .hero:before {
+        content: "";
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background: var(--blue);
+        right: -70px;
+        top: -80px;
+      }
+      .hero > * {
+        position: relative;
+        max-width: 700px;
+      }
+      h1 {
+        font-size: clamp(2.3rem, 5vw, 4rem);
+        line-height: 1.02;
+        letter-spacing: -0.055em;
+        margin: 0 0 20px;
+        font-weight: 900;
+      }
+      .hero p {
+        color: #d3e4fa;
+        font-size: 1.12rem;
+        margin: 0 0 26px;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      section {
+        padding: 70px 0 0;
+      }
+      h2 {
+        font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+        line-height: 1.08;
+        letter-spacing: -0.045em;
+        margin: 0 0 14px;
+        font-weight: 900;
+      }
+      .lead {
+        color: var(--muted);
+        font-size: 1.06rem;
+        margin: 0 0 14px;
+        max-width: 700px;
+      }
+      .points {
+        margin: 18px 0 0;
+        padding-left: 20px;
+        color: var(--muted);
+        max-width: 700px;
+      }
+      .points li {
+        margin: 8px 0;
+      }
+      .points b {
+        color: var(--ink);
+      }
+      .needs {
+        border-top: 1px solid var(--line);
+        margin-top: 26px;
+      }
+      .need {
+        display: grid;
+        grid-template-columns: 0.7fr 1.3fr;
+        gap: 28px;
+        padding: 26px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .need h3 {
+        margin: 0;
+        font-size: 1.35rem;
+        letter-spacing: -0.03em;
+      }
+      .need p {
+        margin: 0 0 10px;
+        color: var(--muted);
+      }
+      .need p:last-child {
+        margin: 0;
+      }
+      .need b {
+        color: var(--ink);
+      }
+      .panel {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        padding: clamp(24px, 4.5vw, 46px);
+      }
+      dl.acct {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 10px 26px;
+        margin: 22px 0 0;
+      }
+      dl.acct dt {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      dl.acct dd {
+        margin: 0;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        overflow-wrap: anywhere;
+      }
+      .small {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      footer {
+        padding: 50px 0 42px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .fi {
+        border-top: 1px solid var(--line);
+        padding-top: 22px;
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .fi .logo {
+        font-size: 1.3rem;
+      }
+      @media (max-width: 700px) {
+        .need {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .wrap {
+          width: min(100% - 28px, 1000px);
+        }
+        .hero {
+          padding: 30px 22px;
+          border-radius: 22px;
+        }
+        section {
+          padding-top: 56px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="wrap nav">
+      <a class="logo" href="index.html" aria-label="drumsticks hack home"
+        >drumsticks<span class="br"
+          >[<span class="h">h</span><span class="a">a</span
+          ><span class="c">c</span><span class="k">k</span>]</span
+        ></a
+      >
+      <a class="navlink" href="index.html">About the event</a>
+    </header>
+    <main class="wrap">
+      <div class="hero">
+        <h1>Help us put on the first hack event.</h1>
+        <p>
+          An ongoing series where builders meet by solving a real problem
+          together and building a working solution, with every solution
+          documented on a public record. We’re looking for support with the
+          venue, refreshments and merch.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#needs">See what we need</a
+          ><a class="btn btn-ghost" href="index.html">Read the full overview</a>
+        </div>
+      </div>
+
+      <section id="needs">
+        <h2>What we need.</h2>
+        <p class="lead">
+          You can help in kind, by providing the item or service itself, or with
+          a contribution toward its cost.
+        </p>
+        <div class="needs">
+          <div class="need">
+            <h3>Venue</h3>
+            <div>
+              <p>
+                A space for a small group of up to 10 people for a full session,
+                with seating, power and reliable internet.
+              </p>
+              <p>
+                <b>How to help:</b> offer a space free or at a discount, or
+                contribute toward the cost of hiring one.
+              </p>
+            </div>
+          </div>
+          <div class="need">
+            <h3>Refreshments</h3>
+            <div>
+              <p>Food and drinks to keep everyone going through the session.</p>
+              <p>
+                <b>How to help:</b> supply or sponsor the refreshments, or
+                contribute toward the cost.
+              </p>
+            </div>
+          </div>
+          <div class="need">
+            <h3>Merch</h3>
+            <div>
+              <p>
+                Branded items for participants, such as t-shirts, stickers and
+                notebooks carrying the drumsticks[hack] mark.
+              </p>
+              <p>
+                <b>How to help:</b> cover the printing, supply the items, or
+                contribute toward the cost.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="give">
+        <div class="panel">
+          <h2>Contribute.</h2>
+          <p class="lead">
+            To give toward any of the above, send your contribution to the
+            account below. Please put your name or organisation in the
+            reference, and let us know whether it’s for the venue, refreshments,
+            merch or general use, so we can acknowledge you and put it to that
+            purpose.
+          </p>
+          <dl class="acct">
+            <dt>Account name</dt>
+            <dd>[Account name]</dd>
+            <dt>Bank</dt>
+            <dd>[Bank name]</dd>
+            <dt>Account number</dt>
+            <dd>[Account number]</dd>
+            <dt>Reference</dt>
+            <dd>drumsticks[hack] + your name</dd>
+          </dl>
+          <p class="small" style="margin: 22px 0 0">
+            Prefer to give in kind, or have a question first? Reply to the
+            person who sent you this page.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>In return.</h2>
+        <p class="lead">
+          Supporters are credited on the event’s entry in the public record,
+          with a link if you’d like one. The record is public, so the
+          acknowledgement lasts.
+        </p>
+      </section>
+    </main>
+    <footer class="wrap">
+      <div class="fi">
+        <a class="logo" href="index.html" aria-label="drumsticks hack home"
+          >drumsticks<span class="br"
+            >[<span class="h">h</span><span class="a">a</span
+            ><span class="c">c</span><span class="k">k</span>]</span
+          ></a
+        >
+        <span>Real problems. Real teams. A record you can point to.</span>
+      </div>
+    </footer>
+  </body>
+</html>
